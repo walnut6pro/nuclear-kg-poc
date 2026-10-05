@@ -1,0 +1,5 @@
+{"stage": "dedup", "reason": "与已保留条目重复", "action": "merge", "subject": "蒸汽发生器", "predicate": "PART_OF", "object": "反应堆冷却剂系统", "param_name": null}
+{"stage": "dedup", "reason": "与已保留条目重复", "action": "merge", "subject": "蒸汽发生器", "predicate": "PART_OF", "object": "反应堆冷却剂系统", "param_name": null}
+{"stage": "nli", "reason": "NLI 判定不支持：证据中未出现要素：维持一回路压力", "action": "drop", "subject": "主泵", "predicate": "HAS_FUNCTION", "object": "维持一回路压力", "param_name": null}
+{"stage": "nli", "reason": "NLI 判定不支持：证据中未出现要素：堆芯出口温度、反应堆冷却剂系统", "action": "drop", "subject": "堆芯出口温度", "predicate": "MONITORS", "object": "反应堆冷却剂系统", "param_name": null}
+{"stage": "numeric", "reason": "报警[高高] 数值 165.0 MPa 超出量级区间 [0.1, 25.0]，已隔离", "action": "quarantine", "subject": null, "predicate": null, "object": null, "param_name": "一回路压力"}

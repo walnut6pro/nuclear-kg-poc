@@ -1,0 +1,20 @@
+# 关系的 domain / range 约束（后置软校验）
+# - hard: true  → 违反即丢弃
+# - hard: false → 仅记录告警，保留结果（POC 阶段默认给"领域推断留活口"）
+constraints:
+  PART_OF:          {domain: [SubSystem, Equipment, Component], range: [System, SubSystem, Equipment, Component], hard: false}
+  LOCATED_IN:       {domain: [Equipment, Component, System],    range: [Plant, System],                            hard: false}
+  HAS_FUNCTION:     {domain: [System, SubSystem, Equipment],    range: [Action],                                   hard: false}
+  MONITORS:         {domain: [Parameter],                       range: [System, Equipment, Component],              hard: true}
+  HAS_SETPOINT:     {domain: [Parameter],                       range: [Setpoint],                                  hard: true}
+  TRIGGERS:         {domain: [Setpoint, Parameter, FaultMode],  range: [Action, Event, FaultMode],                  hard: false}
+  OCCURS_IN:        {domain: [FaultMode],                       range: [Equipment, Component, System],              hard: true}
+  CAUSED_BY:        {domain: [FaultMode, Event],                range: [FaultMode, Event, Component],               hard: false}
+  HAS_SYMPTOM:      {domain: [FaultMode, Event],                range: [FaultMode, Parameter, Event],               hard: false}
+  HAS_CONSEQUENCE:  {domain: [FaultMode, Event],                range: [FaultMode, Event],                          hard: false}
+  MITIGATED_BY:     {domain: [FaultMode, Event],                range: [Action, Procedure, System, Equipment],      hard: false}
+  PRECONDITION_OF:  {domain: [PlantMode, Action, Event, FaultMode], range: [Action, Procedure],                     hard: false}
+  STEP_OF:          {domain: [Action],                          range: [Procedure],                                 hard: true}
+  APPLIES_TO:       {domain: [Procedure, Setpoint],             range: [System, Equipment, PlantMode, Component],   hard: false}
+  REDUNDANT_WITH:   {domain: [Equipment, Component, System],    range: [Equipment, Component, System],              hard: false}
+  DEFINED_IN:       {domain: [Setpoint, Parameter, Procedure],  range: [Procedure],                                 hard: false}

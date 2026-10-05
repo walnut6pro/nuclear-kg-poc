@@ -1,0 +1,205 @@
+# 核电知识图谱 POC 本体配置
+# 说明：prompt 与校验逻辑均以本文件为唯一事实来源，扩展实体/关系时只需改这里。
+version: "1.0.0"
+domain: "压水堆核电厂（PWR）"
+
+entity_types:
+  - id: Plant
+    name_cn: 电厂/机组
+    desc: 核电厂整体或具体机组，如“某核电厂1号机组”。
+    color: "#7B8794"
+    examples: ["某核电厂1号机组", "岭澳核电站1号机组"]
+
+  - id: System
+    name_cn: 系统
+    desc: 完成某项总体功能的一级系统，通常对应一个工艺系统代号。
+    color: "#2E5AAC"
+    examples: ["反应堆冷却剂系统", "辅助给水系统", "余热排出系统"]
+
+  - id: SubSystem
+    name_cn: 子系统
+    desc: 某系统下属的功能分支或子部分。
+    color: "#4F7FD4"
+    examples: ["化学与容积控制系统"]
+
+  - id: Equipment
+    name_cn: 设备
+    desc: 可独立标识的主要设备单体。
+    color: "#2E8B57"
+    examples: ["蒸汽发生器", "主泵", "稳压器", "反应堆压力容器"]
+
+  - id: Component
+    name_cn: 部件
+    desc: 设备内部不可再分或作为检修单元管理的零件/部件。
+    color: "#6FBF82"
+    examples: ["传热管束", "管板", "主泵密封", "汽水分离器"]
+
+  - id: Parameter
+    name_cn: 参数
+    desc: 被监测或被整定的物理量或化学量。
+    color: "#E8892B"
+    examples: ["一回路压力", "蒸汽发生器液位", "堆芯出口温度"]
+
+  - id: Setpoint
+    name_cn: 定值
+    desc: 参数上的具体整定值/阈值，通常绑定到动作（报警、停堆、安全阀动作等）。
+    color: "#D64545"
+    examples: ["压力高高定值", "液位低低定值"]
+
+  - id: PlantMode
+    name_cn: 工况模式
+    desc: 电厂所处的运行工况或状态模式。
+    color: "#9AA5B1"
+    examples: ["功率运行", "冷停堆", "热停堆"]
+
+  - id: FaultMode
+    name_cn: 故障/异常
+    desc: 设备或部件层面的失效模式或异常状态。
+    color: "#8E5BC7"
+    examples: ["传热管破裂", "泵密封泄漏", "应力腐蚀裂纹"]
+
+  - id: Event
+    name_cn: 事件/瞬态
+    desc: 系统层面的事件、事故工况或瞬态过程。
+    color: "#B07CD6"
+    examples: ["SGTR", "LOCA", "失去厂外电源"]
+
+  - id: Procedure
+    name_cn: 规程/文档
+    desc: 规程、导则、技术规格书或说明性文档。
+    color: "#C9A227"
+    examples: ["SGTR处置导则", "报警响应规程"]
+
+  - id: Action
+    name_cn: 操作动作
+    desc: 规程要求或实际执行的操作动作。
+    color: "#26A69A"
+    examples: ["隔离故障蒸汽发生器", "投入辅助给水", "投入稳压器喷淋阀"]
+
+relation_types:
+  - id: PART_OF
+    name_cn: 组成/隶属
+    definition: 主语是宾语的组成部分、设备成员或子系统隶属对象。对象通常是 System/SubSystem/Equipment。
+    positive: ["(蒸汽发生器, PART_OF, 反应堆冷却剂系统)", "(传热管束, PART_OF, 蒸汽发生器)"]
+    negative: ["(蒸汽发生器, PART_OF, 安全壳)  ← 空间容纳，应为 LOCATED_IN"]
+
+  - id: LOCATED_IN
+    name_cn: 空间位置
+    definition: 主语被物理容纳、安装于宾语所指的空间或构筑物内。
+    positive: ["(蒸汽发生器, LOCATED_IN, 安全壳)"]
+    negative: ["(主泵, LOCATED_IN, 反应堆冷却剂系统) ← 应为 PART_OF"]
+
+  - id: HAS_FUNCTION
+    name_cn: 功能职责
+    definition: 主语（设备/系统）的固有功能或职责是宾语所述的功能描述。宾语一般为动宾短语，不强行归入其它实体类型时归入 Action 或文本短语。
+    positive: ["(稳压器, HAS_FUNCTION, 维持一回路压力)", "(蒸汽发生器, HAS_FUNCTION, 产生饱和蒸汽)"]
+    negative: ["(稳压器, HAS_FUNCTION, 反应堆冷却剂系统)"]
+
+  - id: MONITORS
+    name_cn: 参数监测
+    definition: 参数主语用于监测、表征宾语（系统/设备）的运行状态。
+    positive: ["(一回路压力, MONITORS, 反应堆冷却剂系统)", "(蒸汽发生器液位, MONITORS, 蒸汽发生器)"]
+    negative: ["(反应堆冷却剂系统, MONITORS, 一回路压力) ← 方向反了"]
+
+  - id: HAS_SETPOINT
+    name_cn: 参数关联定值
+    definition: 参数主语关联到其整定值（Setpoint）。
+    positive: ["(一回路压力, HAS_SETPOINT, 压力高高定值)"]
+    negative: ["(压力高高定值, HAS_SETPOINT, 一回路压力)"]
+
+  - id: TRIGGERS
+    name_cn: 触发
+    description: 条件/参数越限触发报警信号、保护动作或后续事件。
+    definition: 主语（通常是“参数越限状态”或 Setpoint）触发宾语（报警信号/动作/事件）。
+    positive: ["(压力高高定值16.5MPa, TRIGGERS, 稳压器安全阀动作)", "(液位低低定值, TRIGGERS, 紧急停堆)"]
+    negative: ["(稳压器安全阀动作, TRIGGERS, 压力高高定值)"]
+
+  - id: OCCURS_IN
+    name_cn: 故障发生位置
+    definition: 故障/失效发生在宾语所指的设备或部件上。主语必须是 FaultMode。
+    positive: ["(传热管破裂, OCCURS_IN, 蒸汽发生器)", "(泵密封泄漏, OCCURS_IN, 主泵)"]
+    negative: ["(应力腐蚀裂纹, OCCURS_IN, 传热管破裂) ← 这是因果关系，应为 CAUSED_BY 反向"]
+
+  - id: CAUSED_BY
+    name_cn: 故障原因
+    definition: 主语（故障/事件）的原因或机理是宾语。
+    positive: ["(传热管破裂, CAUSED_BY, 应力腐蚀裂纹)", "(传热管破裂, CAUSED_BY, 磨损减薄)"]
+    negative: ["(应力腐蚀裂纹, CAUSED_BY, 传热管破裂)"]
+
+  - id: HAS_SYMPTOM
+    name_cn: 故障表现
+    definition: 主语（故障/事件）的可观测征兆或表征现象。
+    positive: ["(传热管破裂, HAS_SYMPTOM, 二回路放射性水平异常升高)", "(传热管破裂, HAS_SYMPTOM, 蒸汽发生器液位快速上升)"]
+    negative: ["(传热管破裂, HAS_SYMPTOM, 放射性释放) ← 后果不是征兆"]
+
+  - id: HAS_CONSEQUENCE
+    name_cn: 故障后果
+    definition: 主语（故障/事件）进一步发展造成的后果或影响。
+    positive: ["(传热管破裂, HAS_CONSEQUENCE, 一回路冷却剂向二回路泄漏)", "(传热管破裂, HAS_CONSEQUENCE, 放射性释放)"]
+    negative: ["(传热管破裂, HAS_CONSEQUENCE, 应力腐蚀裂纹) ← 这是原因"]
+
+  - id: MITIGATED_BY
+    name_cn: 故障处置
+    definition: 主语（故障/事件）通过宾语所述的操作动作、系统或规程得到缓解/处置。
+    positive: ["(传热管破裂, MITIGATED_BY, 隔离故障蒸汽发生器)", "(传热管破裂, MITIGATED_BY, SGTR处置导则)"]
+    negative: ["(隔离故障蒸汽发生器, MITIGATED_BY, 传热管破裂)"]
+
+  - id: PRECONDITION_OF
+    name_cn: 前置条件
+    definition: 主语所述的条件成立是执行宾语（动作/后续步骤）的先决条件。
+    positive: ["(一回路温度低于180℃, PRECONDITION_OF, 投入余热排出系统)", "(一回路压力高于SG二次侧压力, PRECONDITION_OF, 投入稳压器喷淋阀)"]
+    negative: ["(投入余热排出系统, PRECONDITION_OF, 一回路温度低于180℃) ← 方向反了"]
+
+  - id: STEP_OF
+    name_cn: 规程包含步骤
+    definition: 主语（操作动作/步骤）是宾语（规程/文档）的组成步骤。
+    positive: ["(隔离故障蒸汽发生器, STEP_OF, SGTR处置导则)", "(投入余热排出系统, STEP_OF, SGTR处置导则)"]
+    negative: ["(SGTR处置导则, STEP_OF, 隔离故障蒸汽发生器)"]
+
+  - id: APPLIES_TO
+    name_cn: 适用对象
+    definition: 主语（规程/文档/定值）适用于宾语所指的对象（系统/设备/工况）。
+    positive: ["(SGTR处置导则, APPLIES_TO, 蒸汽发生器)", "(SGTR处置导则, APPLIES_TO, 功率运行)"]
+    negative: ["(蒸汽发生器, APPLIES_TO, SGTR处置导则)"]
+
+  - id: REDUNDANT_WITH
+    name_cn: 冗余关系
+    definition: 主语与宾语在功能上互为冗余/备用，任一台可代替另一台完成任务。
+    positive: ["(辅助给水泵A, REDUNDANT_WITH, 辅助给水泵B)"]
+    negative: ["(蒸汽发生器A, REDUNDANT_WITH, 主泵) ← 功能不同，不构成冗余"]
+
+  - id: DEFINED_IN
+    name_cn: 引用出处
+    definition: 主语（定值/术语/技术事实）的定义或规定出自宾语（规程/文档）。
+    positive: ["(压力高高定值, DEFINED_IN, 压水堆核电厂系统与设备)", "(压力低低定值, DEFINED_IN, SGTR处置导则)"]
+    negative: ["(蒸汽发生器, DEFINED_IN, SGTR处置导则) ← 设备不是由规程定义的"]
+
+# ---- 数值/逻辑校验规则（后处理第③步使用）----
+validation_rules:
+  setpoint_ordering:
+    desc: 同类参数的报警定值必须满足 低低 < 低 < 正常范围 < 高 < 高高
+    order: ["低低", "低", "高", "高高"]
+  magnitude_checks:
+    - param_keyword: "压力"
+      unit: "MPa"
+      plausible_min: 0.1
+      plausible_max: 25.0
+      note: "一回路压力不可能超过 100 MPa"
+    - param_keyword: "温度"
+      unit: "℃"
+      plausible_min: 0.0
+      plausible_max: 1200.0
+    - param_keyword: "液位"
+      unit: "%NR"
+      plausible_min: -10.0
+      plausible_max: 110.0
+
+# ---- 两遍式抽取开关 ----
+extraction:
+  mode: "single"       # single | two_pass
+  two_pass:
+    pass1: "entities"
+    pass2: "relations"
+  temperature: 0.0
+  confidence_levels: ["high", "medium", "low"]
+  drop_confidence: []   # 如需在入库前过滤 low，可填 ["low"]

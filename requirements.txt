@@ -1,0 +1,13 @@
+# —— POC 运行最小依赖（离线演示只需要 pyyaml）——
+pyyaml>=6.0
+
+# —— 接真实 LLM（deepseek / openai / vLLM）时需要 ——
+# openai>=1.40.0
+
+# —— 图谱入库时需要 ——
+# neo4j>=5.20.0
+
+# —— 规模化阶段的可选依赖 ——
+# FlagEmbedding>=1.2.0   # BGE-M3：实体归一化的 embedding 召回
+# jsonschema>=4.20.0     # 用完整 JSON Schema 校验替代内置轻量校验
+# loguru>=0.7.0

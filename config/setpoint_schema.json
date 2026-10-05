@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "核电参数定值条目 Schema",
+  "description": "定值表抽取结果的结构约束，用于第5步后处理中的 Schema 校验环节。",
+  "type": "object",
+  "required": ["param_name", "unit", "source", "confidence"],
+  "additionalProperties": false,
+  "properties": {
+    "param_id": {
+      "type": ["string", "null"],
+      "description": "参数内部编号，建议 {系统代号}-{参数代号}-{三位序号}，如 RCS-PT-001；未知时填 null",
+      "pattern": "^[A-Z]{2,6}-[A-Z]{2,4}-\\d{3}$"
+    },
+    "param_name": {
+      "type": "string",
+      "description": "参数中文规范名称，如 一回路压力",
+      "minLength": 2
+    },
+    "param_name_en": {
+      "type": ["string", "null"],
+      "description": "参数英文名称，如 RCS Pressure"
+    },
+    "system": {
+      "type": ["string", "null"],
+      "description": "所属系统，如 反应堆冷却剂系统"
+    },
+    "equipment": {
+      "type": ["string", "null"],
+      "description": "关联设备，如 稳压器"
+    },
+    "unit": {
+      "type": "string",
+      "description": "计量单位，使用应试换算后的标准单位，如 MPa / ℃ / %NR / m³/h",
+      "examples": ["MPa", "℃", "%NR", "m³/h", "kPa", "bar"]
+    },
+    "normal_range": {
+      "type": ["object", "null"],
+      "description": "正常运行范围，缺失填 null",
+      "additionalProperties": false,
+      "properties": {
+        "min": { "type": ["number", "null"] },
+        "max": { "type": ["number", "null"] }
+      }
+    },
+    "alarms": {
+      "type": "array",
+      "description": "报警/保护定值列表，按级别归类",
+      "items": {
+        "type": "object",
+        "required": ["level", "value"],
+        "additionalProperties": false,
+        "properties": {
+          "level": {
+            "type": "string",
+            "enum": ["低低", "低", "高", "高高", "其他"],
+            "description": "报警级别；原文使用其它表述（如“整定值1/2”）时映射后落在 其他 并在 level_raw 注明"
+          },
+          "level_raw": { "type": ["string", "null"], "description": "原文级别表述" },
+          "value": { "type": ["number", "string"], "description": "整定值，保留原文精度" },
+          "value_raw": { "type": ["string", "null"], "description": "原文数值与单位的原始字符串，如 225 bar" },
+          "action": { "type": ["string", "null"], "description": "触发动作，如 紧急停堆 / 报警 / 安全阀动作" },
+          "applicable_mode": { "type": ["string", "null"], "description": "适用工况，如 功率运行" }
+        }
+      }
+    },
+    "applicable_mode": {
+      "type": ["string", "null"],
+      "description": "整表层面的适用工况，如 功率运行；alarms 中各行可覆盖"
+    },
+    "source": {
+      "type": "object",
+      "required": ["doc"],
+      "additionalProperties": false,
+      "properties": {
+        "doc": { "type": "string", "description": "来源文档文件名或标题" },
+        "page": { "type": ["integer", "null"], "description": "页码；Markdown 无页码时填 null" },
+        "section": { "type": ["string", "null"], "description": "章节路径，如 3.2.1" },
+        "evidence": { "type": ["string", "null"], "description": "原文逐字片段" }
+      }
+    },
+    "version": { "type": "string", "description": "抽取结果版本号", "default": "v1.0" },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "抽取置信度 0~1"
+    }
+  }
+}

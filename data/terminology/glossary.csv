@@ -1,0 +1,62 @@
+﻿canonical,type,aliases,source
+反应堆冷却剂系统,System,"一回路|RCS|Reactor Coolant System|主系统",核电通用术语
+蒸汽发生器,Equipment,"SG|Steam Generator|蒸发器",核电通用术语
+主泵,Equipment,"反应堆冷却剂泵|RCP|Reactor Coolant Pump",核电通用术语
+稳压器,Equipment,"PZR|Pressurizer|压力调节器",核电通用术语
+反应堆压力容器,Equipment,"RPV|Reactor Pressure Vessel|压力容器",核电通用术语
+传热管束,Component,"传热管|管束|Tube Bundle",核电通用术语
+管板,Component,"TS|Tube Sheet",核电通用术语
+汽水分离器,Component,"Steam Separator|分离器",核电通用术语
+下封头,Component,"Channel Head|封头",核电通用术语
+安全壳,System,"Containment|反应堆厂房",核电通用术语
+辅助给水系统,System,"ASG|Auxiliary Feedwater System|辅助给水",核电通用术语
+辅助给水泵A,Equipment,"ASG泵A|A泵|辅助给水泵A列",核电通用术语
+辅助给水泵B,Equipment,"ASG泵B|B泵|辅助给水泵B列",核电通用术语
+余热排出系统,System,"RHR|Residual Heat Removal|余热排出",核电通用术语
+主蒸汽管线,Component,"MSS|Main Steam Line|主蒸汽管",核电通用术语
+主蒸汽隔离阀,Component,"MSIV|Main Steam Isolation Valve",核电通用术语
+一回路压力,Parameter,"RCS压力|Reactor Coolant System Pressure|PRZ压力",核电通用术语
+蒸汽发生器液位,Parameter,"SG液位|SG Level|SG窄量程液位",核电通用术语
+堆芯出口温度,Parameter,"堆芯出口冷却剂温度|Core Outlet Temperature",核电通用术语
+堆芯入口温度,Parameter,"堆芯入口冷却剂温度|Core Inlet Temperature",核电通用术语
+单环路冷却剂流量,Parameter,"环路流量|Loop Flow",核电通用术语
+蒸汽发生器传热管破裂,FaultMode,"SGTR|传热管破裂|SG Tube Rupture|蒸发器传热管破裂",核电通用术语
+应力腐蚀裂纹,FaultMode,"应力腐蚀|SCC|Stress Corrosion Cracking",核电通用术语
+磨损减薄,FaultMode,"Wear Thinning|减薄",核电通用术语
+制造缺陷,FaultMode,"Manufacturing Defect|原始缺陷",核电通用术语
+功率运行,PlantMode,"功率运行工况|Power Operation|正常运行工况",核电通用术语
+冷停堆,PlantMode,"Cold Shutdown|停堆冷却",核电通用术语
+SGTR处置导则,Procedure,"蒸汽发生器传热管破裂处置导则|SGTR处置导则|处置导则|本导则",核电通用术语
+压水堆核电厂系统与设备,Procedure,"教材|DOC_A|教材节选",POC内部
+隔离故障蒸汽发生器,Action,"隔离故障SG|Isolate Faulted SG|隔离故障蒸汽发生器的给水与蒸汽管线",POC内部
+投入辅助给水,Action,"启动辅助给水系统|启动辅助给水|ASG启动",POC内部
+投入稳压器喷淋阀,Action,"开喷淋阀|投入喷淋|稳压器喷淋",POC内部
+投入余热排出系统（RHR）,Action,"投运RHR|RHR投入|投入余热排出系统|投入余热排出",POC内部
+紧急停堆,Action,"SCRAM|停堆|Reactor Trip",核电通用术语
+稳压器安全阀动作,Action,"安全阀动作|Safety Valve Actuation",核电通用术语
+放射性释放,Event,"Radioactivity Release|放射性向环境释放",核电通用术语
+二回路放射性水平异常升高,FaultMode,"二回路放射性升高|Secondary Side Activity Increase",POC内部
+一回路冷却剂向二回路泄漏,FaultMode,"一次侧向二次侧泄漏|Primary-to-Secondary Leakage",POC内部
+放射性向二回路释放,Event,"Secondary Side Contamination",POC内部
+SG液位快速上升,FaultMode,"蒸汽发生器液位快速上升|液位不可控上升",POC内部
+一回路压力下降,FaultMode,"RCS压力下降|压力下降",POC内部
+稳压器液位降低,FaultMode,"PZR液位降低|稳压器水位下降",POC内部
+一回路降温降压,Action,"一回路降压操作|RCS depressurization|降压操作",POC内部
+完成故障蒸汽发生器隔离,Action,"隔离完成|完成隔离",POC内部
+终止泄漏,Action,"停止泄漏|终止一、二回路泄漏",POC内部
+一、二回路压差小于0.5MPa,PlantMode,"压差小于0.5MPa|一二回路压差小于0.5 MPa",POC内部
+一回路压力高于故障蒸汽发生器二次侧压力,PlantMode,"一回路压力高于SG二次侧压力|RCS压力高于故障SG二次侧压力",POC内部
+一回路温度低于180℃,PlantMode,"一回路温度低于180 ℃|RCS温度低于180℃",POC内部
+一回路压力低于3.0MPa,PlantMode,"一回路压力低于3.0 MPa|RCS压力低于3.0MPa",POC内部
+关闭主蒸汽隔离阀,Action,"关闭MSIV|关主蒸汽隔离阀",POC内部
+隔离故障蒸汽发生器的辅助给水管线,Action,"隔离SG辅助给水|隔离故障SG给水管线",POC内部
+隔离故障蒸汽发生器的主蒸汽管线,Action,"隔离SG主蒸汽|隔离故障SG蒸汽管线",POC内部
+停止上充泵补水,Action,"停运上充泵|停止补水",POC内部
+大气释放阀控制蒸汽排放,Action,"投运大气释放阀|大气排放",POC内部
+报警信号,Event,"Alarm|报警",核电通用术语
+压水堆核电厂,Plant,"PWR电厂|核电厂",核电通用术语
+一回路承压边界,Component,"RCS Pressure Boundary|承压边界",核电通用术语
+压力高高定值16.5MPa,Setpoint,"压力高高|压力高高定值|高高定值16.5 MPa",POC内部
+压力高定值16.2MPa,Setpoint,"压力高定值|高定值16.2 MPa",POC内部
+压力低低定值13.9MPa,Setpoint,"压力低低定值|低低定值13.9 MPa",POC内部
+液位低低定值,Setpoint,"液位低低|SG液位低低定值",POC内部

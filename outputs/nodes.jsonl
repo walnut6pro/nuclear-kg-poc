@@ -1,0 +1,65 @@
+{"node_key": "反应堆冷却剂系统", "name": "反应堆冷却剂系统", "type": "System", "aliases": ["反应堆冷却剂系统"], "security_level": "公开"}
+{"node_key": "把堆芯产生的热量传递给蒸汽发生器二次侧", "name": "把堆芯产生的热量传递给蒸汽发生器二次侧", "type": "Action", "aliases": ["把堆芯产生的热量传递给蒸汽发生器二次侧"], "security_level": "公开"}
+{"node_key": "维持堆芯冷却", "name": "维持堆芯冷却", "type": "Action", "aliases": ["维持堆芯冷却"], "security_level": "公开"}
+{"node_key": "蒸汽发生器", "name": "蒸汽发生器", "type": "Equipment", "aliases": ["蒸汽发生器"], "security_level": "公开"}
+{"node_key": "主泵", "name": "主泵", "type": "Equipment", "aliases": ["主泵"], "security_level": "公开"}
+{"node_key": "稳压器", "name": "稳压器", "type": "Equipment", "aliases": ["稳压器"], "security_level": "公开"}
+{"node_key": "反应堆压力容器", "name": "反应堆压力容器", "type": "Equipment", "aliases": ["反应堆压力容器"], "security_level": "公开"}
+{"node_key": "维持一回路压力", "name": "维持一回路压力", "type": "Action", "aliases": ["维持一回路压力"], "security_level": "公开"}
+{"node_key": "一回路压力", "name": "一回路压力", "type": "Parameter", "aliases": ["RCS Pressure", "一回路压力"], "security_level": "公开", "unit": "MPa", "param_id": "RCS-PT-001", "source_doc": "DOC_A_RCS_SG_overview.md; DOC_B_SGTR_procedure.md"}
+{"node_key": "设计压力17.23MPa", "name": "设计压力17.23MPa", "type": "Setpoint", "aliases": ["设计压力17.23MPa"], "security_level": "公开"}
+{"node_key": "辅助给水泵A", "name": "辅助给水泵A", "type": "Equipment", "aliases": ["辅助给水泵A"], "security_level": "公开"}
+{"node_key": "辅助给水泵B", "name": "辅助给水泵B", "type": "Equipment", "aliases": ["辅助给水泵B"], "security_level": "公开"}
+{"node_key": "辅助给水系统", "name": "辅助给水系统", "type": "System", "aliases": ["辅助给水系统"], "security_level": "公开"}
+{"node_key": "满足事故工况下的给水需求", "name": "满足事故工况下的给水需求", "type": "Action", "aliases": ["满足事故工况下的给水需求"], "security_level": "公开"}
+{"node_key": "安全壳", "name": "安全壳", "type": "System", "aliases": ["安全壳"], "security_level": "公开"}
+{"node_key": "传热管束", "name": "传热管束", "type": "Component", "aliases": ["传热管束"], "security_level": "公开"}
+{"node_key": "管板", "name": "管板", "type": "Component", "aliases": ["管板"], "security_level": "公开"}
+{"node_key": "汽水分离器", "name": "汽水分离器", "type": "Component", "aliases": ["汽水分离器"], "security_level": "公开"}
+{"node_key": "产生饱和蒸汽", "name": "产生饱和蒸汽", "type": "Action", "aliases": ["产生饱和蒸汽"], "security_level": "公开"}
+{"node_key": "一回路承压边界", "name": "一回路承压边界", "type": "Component", "aliases": ["一回路承压边界"], "security_level": "公开"}
+{"node_key": "蒸汽发生器传热管破裂", "name": "蒸汽发生器传热管破裂", "type": "FaultMode", "aliases": ["蒸汽发生器传热管破裂"], "security_level": "公开"}
+{"node_key": "二回路放射性水平异常升高", "name": "二回路放射性水平异常升高", "type": "FaultMode", "aliases": ["二回路放射性水平异常升高"], "security_level": "公开"}
+{"node_key": "SG液位快速上升", "name": "SG液位快速上升", "type": "FaultMode", "aliases": ["SG液位快速上升"], "security_level": "公开"}
+{"node_key": "一回路压力下降", "name": "一回路压力下降", "type": "FaultMode", "aliases": ["一回路压力下降"], "security_level": "公开"}
+{"node_key": "稳压器液位降低", "name": "稳压器液位降低", "type": "FaultMode", "aliases": ["稳压器液位降低"], "security_level": "公开"}
+{"node_key": "应力腐蚀裂纹", "name": "应力腐蚀裂纹", "type": "FaultMode", "aliases": ["应力腐蚀裂纹"], "security_level": "公开"}
+{"node_key": "制造缺陷", "name": "制造缺陷", "type": "FaultMode", "aliases": ["制造缺陷"], "security_level": "公开"}
+{"node_key": "一回路冷却剂向二回路泄漏", "name": "一回路冷却剂向二回路泄漏", "type": "FaultMode", "aliases": ["一回路冷却剂向二回路泄漏"], "security_level": "公开"}
+{"node_key": "放射性释放", "name": "放射性释放", "type": "Event", "aliases": ["放射性释放"], "security_level": "公开"}
+{"node_key": "隔离故障蒸汽发生器", "name": "隔离故障蒸汽发生器", "type": "Action", "aliases": ["隔离故障蒸汽发生器"], "security_level": "公开"}
+{"node_key": "压力高定值16.2MPa", "name": "压力高定值16.2MPa", "type": "Setpoint", "aliases": ["压力高定值16.2MPa"], "security_level": "公开"}
+{"node_key": "报警信号", "name": "报警信号", "type": "Event", "aliases": ["报警", "报警信号"], "security_level": "公开"}
+{"node_key": "压力高高定值16.5MPa", "name": "压力高高定值16.5MPa", "type": "Setpoint", "aliases": ["压力高高定值16.5MPa"], "security_level": "公开"}
+{"node_key": "稳压器安全阀动作", "name": "稳压器安全阀动作", "type": "Action", "aliases": ["稳压器安全阀动作"], "security_level": "公开"}
+{"node_key": "液位低低定值", "name": "液位低低定值", "type": "Setpoint", "aliases": ["液位低低定值"], "security_level": "公开"}
+{"node_key": "紧急停堆", "name": "紧急停堆", "type": "Action", "aliases": ["紧急停堆"], "security_level": "公开"}
+{"node_key": "投入辅助给水", "name": "投入辅助给水", "type": "Action", "aliases": ["投入辅助给水"], "security_level": "公开"}
+{"node_key": "SGTR处置导则", "name": "SGTR处置导则", "type": "Procedure", "aliases": ["SGTR处置导则"], "security_level": "公开"}
+{"node_key": "功率运行", "name": "功率运行", "type": "PlantMode", "aliases": ["功率运行"], "security_level": "公开"}
+{"node_key": "隔离故障蒸汽发生器的主蒸汽管线", "name": "隔离故障蒸汽发生器的主蒸汽管线", "type": "Action", "aliases": ["隔离故障蒸汽发生器的主蒸汽管线"], "security_level": "公开"}
+{"node_key": "隔离故障蒸汽发生器的辅助给水管线", "name": "隔离故障蒸汽发生器的辅助给水管线", "type": "Action", "aliases": ["隔离故障蒸汽发生器的辅助给水管线"], "security_level": "公开"}
+{"node_key": "完成故障蒸汽发生器隔离", "name": "完成故障蒸汽发生器隔离", "type": "Action", "aliases": ["完成故障蒸汽发生器隔离"], "security_level": "公开"}
+{"node_key": "一回路降温降压", "name": "一回路降温降压", "type": "Action", "aliases": ["一回路降温降压"], "security_level": "公开"}
+{"node_key": "投入稳压器喷淋阀", "name": "投入稳压器喷淋阀", "type": "Action", "aliases": ["投入稳压器喷淋阀"], "security_level": "公开"}
+{"node_key": "一回路压力高于故障蒸汽发生器二次侧压力", "name": "一回路压力高于故障蒸汽发生器二次侧压力", "type": "PlantMode", "aliases": ["一回路压力高于故障蒸汽发生器二次侧压力"], "security_level": "公开"}
+{"node_key": "一、二回路压差小于0.5MPa", "name": "一、二回路压差小于0.5MPa", "type": "PlantMode", "aliases": ["一、二回路压差小于0.5MPa"], "security_level": "公开"}
+{"node_key": "终止泄漏", "name": "终止泄漏", "type": "Action", "aliases": ["终止泄漏"], "security_level": "公开"}
+{"node_key": "停止上充泵补水", "name": "停止上充泵补水", "type": "Action", "aliases": ["停止上充泵补水"], "security_level": "公开"}
+{"node_key": "一回路温度低于180℃", "name": "一回路温度低于180℃", "type": "PlantMode", "aliases": ["一回路温度低于180℃"], "security_level": "公开"}
+{"node_key": "投入余热排出系统", "name": "投入余热排出系统（RHR）", "type": "Action", "aliases": ["投入余热排出系统（RHR）"], "security_level": "公开"}
+{"node_key": "一回路压力低于3.0MPa", "name": "一回路压力低于3.0MPa", "type": "PlantMode", "aliases": ["一回路压力低于3.0MPa"], "security_level": "公开"}
+{"node_key": "一回路设计压力", "name": "一回路设计压力", "type": "Parameter", "aliases": ["RCS Design Pressure", "一回路设计压力"], "security_level": "公开", "unit": "MPa", "param_id": "RCS-PT-002", "source_doc": "DOC_A_RCS_SG_overview.md"}
+{"node_key": "堆芯出口温度", "name": "堆芯出口温度", "type": "Parameter", "aliases": ["Core Outlet Temperature", "堆芯出口温度"], "security_level": "公开", "unit": "℃", "param_id": "RCS-TE-001", "source_doc": "DOC_A_RCS_SG_overview.md"}
+{"node_key": "堆芯入口温度", "name": "堆芯入口温度", "type": "Parameter", "aliases": ["Core Inlet Temperature", "堆芯入口温度"], "security_level": "公开", "unit": "℃", "param_id": "RCS-TE-002", "source_doc": "DOC_A_RCS_SG_overview.md"}
+{"node_key": "单环路冷却剂流量", "name": "单环路冷却剂流量", "type": "Parameter", "aliases": ["Loop Flow Rate", "单环路冷却剂流量"], "security_level": "公开", "unit": "m³/h", "param_id": "RCS-FT-001", "source_doc": "DOC_A_RCS_SG_overview.md"}
+{"node_key": "一回路压力低低定值", "name": "一回路压力低低定值", "type": "Setpoint", "aliases": ["一回路压力低低定值"], "security_level": "公开", "source_doc": "DOC_A_RCS_SG_overview.md; DOC_B_SGTR_procedure.md", "source_docs": ["DOC_A_RCS_SG_overview.md", "DOC_B_SGTR_procedure.md"], "values": [13.9, 13.9], "value": 13.9, "unit": "MPa", "action": "触发紧急停堆", "applicable_mode": "功率运行"}
+{"node_key": "触发紧急停堆", "name": "触发紧急停堆", "type": "Action", "aliases": ["触发紧急停堆"], "security_level": "公开"}
+{"node_key": "一回路压力低定值", "name": "一回路压力低定值", "type": "Setpoint", "aliases": ["一回路压力低定值"], "security_level": "公开", "source_doc": "DOC_A_RCS_SG_overview.md; DOC_B_SGTR_procedure.md", "source_docs": ["DOC_A_RCS_SG_overview.md", "DOC_B_SGTR_procedure.md"], "values": [14.5, 14.5], "value": 14.5, "unit": "MPa", "action": "报警", "applicable_mode": "功率运行"}
+{"node_key": "一回路压力高定值", "name": "一回路压力高定值", "type": "Setpoint", "aliases": ["一回路压力高定值"], "security_level": "公开", "source_doc": "DOC_A_RCS_SG_overview.md; DOC_B_SGTR_procedure.md", "source_docs": ["DOC_A_RCS_SG_overview.md", "DOC_B_SGTR_procedure.md"], "values": [16.2, 16.2], "value": 16.2, "unit": "MPa", "action": "报警", "applicable_mode": "功率运行"}
+{"node_key": "蒸汽发生器液位", "name": "蒸汽发生器液位", "type": "Parameter", "aliases": ["SG Level (Narrow Range)", "蒸汽发生器液位"], "security_level": "公开", "unit": "%NR", "param_id": "SG-LT-001", "source_doc": "DOC_A_RCS_SG_overview.md"}
+{"node_key": "蒸汽发生器液位低低定值", "name": "蒸汽发生器液位低低定值", "type": "Setpoint", "aliases": ["蒸汽发生器液位低低定值"], "security_level": "公开", "source_doc": "DOC_A_RCS_SG_overview.md", "source_docs": ["DOC_A_RCS_SG_overview.md"], "values": [0], "value": 0, "unit": "%NR", "action": "触发紧急停堆并启动辅助给水", "applicable_mode": "功率运行"}
+{"node_key": "触发紧急停堆并启动辅助给水", "name": "触发紧急停堆并启动辅助给水", "type": "Action", "aliases": ["触发紧急停堆并启动辅助给水"], "security_level": "公开"}
+{"node_key": "蒸汽发生器液位低定值", "name": "蒸汽发生器液位低定值", "type": "Setpoint", "aliases": ["蒸汽发生器液位低定值"], "security_level": "公开", "source_doc": "DOC_A_RCS_SG_overview.md", "source_docs": ["DOC_A_RCS_SG_overview.md"], "values": [25], "value": 25, "unit": "%NR", "action": "报警", "applicable_mode": "功率运行"}
+{"node_key": "蒸汽发生器液位高定值", "name": "蒸汽发生器液位高定值", "type": "Setpoint", "aliases": ["蒸汽发生器液位高定值"], "security_level": "公开", "source_doc": "DOC_A_RCS_SG_overview.md", "source_docs": ["DOC_A_RCS_SG_overview.md"], "values": [75], "value": 75, "unit": "%NR", "action": "报警", "applicable_mode": "功率运行"}
+{"node_key": "一回路压力高高定值", "name": "一回路压力高高定值", "type": "Setpoint", "aliases": ["一回路压力高高定值"], "security_level": "公开", "source_doc": "DOC_B_SGTR_procedure.md", "source_docs": ["DOC_B_SGTR_procedure.md"], "values": [16.5], "value": 16.5, "unit": "MPa", "action": "稳压器安全阀动作", "applicable_mode": "功率运行"}

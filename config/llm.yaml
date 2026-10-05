@@ -1,0 +1,55 @@
+# LLM 连接配置
+# 统一采用 OpenAI 兼容格式，外网 POC 与内网部署只改 base_url / model 即可平移。
+
+default_provider: "mock"
+
+providers:
+  # ---- 离线演示：不需要任何 key，读取 fixtures 中的预置抽取结果 ----
+  mock:
+    type: "mock"
+    provider: "mock"
+    base_url: ""
+    model: "mock-v0"
+    temperature: 0.0
+    fixture_path: "data/fixtures/mock_extractions.json"
+
+  # ---- 外网 POC 推荐：DeepSeek，便宜 + 中文好 + 支持 JSON mode ----
+  deepseek:
+    type: "openai_compatible"
+    provider: "openai"
+    base_url: "https://api.deepseek.com"
+    model: "deepseek-chat"
+    api_key_env: "DEEPSEEK_API_KEY"
+    temperature: 0.0
+    max_tokens: 4096
+    response_format: "json_object"
+
+  # ---- OpenAI ----
+  openai:
+    type: "openai_compatible"
+    provider: "openai"
+    base_url: "https://api.openai.com/v1"
+    model: "gpt-4o"
+    api_key_env: "OPENAI_API_KEY"
+    temperature: 0.0
+    max_tokens: 4096
+    response_format: "json_object"
+
+  # ---- 内网平移：vLLM / Xinference 本地部署（示例：Qwen2.5-72B） ----
+  vllm_qwen:
+    type: "openai_compatible"
+    provider: "openai"
+    base_url: "http://localhost:8000/v1"
+    model: "Qwen2.5-72B-Instruct"
+    api_key_env: "VLLM_API_KEY"    # vLLM 默认不需要，可填任意值或不设置
+    temperature: 0.0
+    max_tokens: 4096
+    response_format: "json_object"
+
+# ---- 成本与并发控制 ----
+runtime:
+  max_chunk_chars: 20000      # 超过则跳过并告警
+  retry: 3
+  retry_backoff_sec: 2.0
+  concurrency: 1              # POC 阶段单线程最好排查；如需提速改为 4~8
+  record_token_usage: true    # 每份文档的 token 消耗写入 outputs/token_usage.jsonl

@@ -1,0 +1,245 @@
+{
+  "triples": {
+    "gold_total": 46,
+    "pred_total": 43,
+    "tp": 42,
+    "precision": 0.9767,
+    "recall": 0.913,
+    "f1": 0.9438,
+    "buckets": [
+      {
+        "relation": "APPLIES_TO",
+        "gold": 2,
+        "pred": 2,
+        "tp": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "relation": "CAUSED_BY",
+        "gold": 3,
+        "pred": 2,
+        "tp": 2,
+        "precision": 1.0,
+        "recall": 0.6667,
+        "f1": 0.8
+      },
+      {
+        "relation": "HAS_CONSEQUENCE",
+        "gold": 3,
+        "pred": 2,
+        "tp": 2,
+        "precision": 1.0,
+        "recall": 0.6667,
+        "f1": 0.8
+      },
+      {
+        "relation": "HAS_FUNCTION",
+        "gold": 5,
+        "pred": 5,
+        "tp": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "relation": "HAS_SETPOINT",
+        "gold": 1,
+        "pred": 1,
+        "tp": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "relation": "HAS_SYMPTOM",
+        "gold": 4,
+        "pred": 4,
+        "tp": 4,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "relation": "LOCATED_IN",
+        "gold": 1,
+        "pred": 1,
+        "tp": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "relation": "MITIGATED_BY",
+        "gold": 1,
+        "pred": 1,
+        "tp": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "relation": "MONITORS",
+        "gold": 1,
+        "pred": 1,
+        "tp": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "relation": "OCCURS_IN",
+        "gold": 1,
+        "pred": 1,
+        "tp": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "relation": "PART_OF",
+        "gold": 9,
+        "pred": 8,
+        "tp": 8,
+        "precision": 1.0,
+        "recall": 0.8889,
+        "f1": 0.9412
+      },
+      {
+        "relation": "PRECONDITION_OF",
+        "gold": 5,
+        "pred": 5,
+        "tp": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "relation": "REDUNDANT_WITH",
+        "gold": 1,
+        "pred": 1,
+        "tp": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "relation": "STEP_OF",
+        "gold": 5,
+        "pred": 5,
+        "tp": 4,
+        "precision": 0.8,
+        "recall": 0.8,
+        "f1": 0.8
+      },
+      {
+        "relation": "TRIGGERS",
+        "gold": 4,
+        "pred": 4,
+        "tp": 4,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    ],
+    "missed_gold": [
+      [
+        "下封头",
+        "PART_OF",
+        "蒸汽发生器"
+      ],
+      [
+        "关闭主蒸汽隔离阀",
+        "STEP_OF",
+        "SGTR处置导则"
+      ],
+      [
+        "蒸汽发生器传热管破裂",
+        "CAUSED_BY",
+        "磨损减薄"
+      ],
+      [
+        "蒸汽发生器传热管破裂",
+        "HAS_CONSEQUENCE",
+        "放射性向二回路释放"
+      ]
+    ],
+    "false_positive": [
+      [
+        "停止上充泵补水",
+        "STEP_OF",
+        "SGTR处置导则"
+      ]
+    ]
+  },
+  "setpoints": {
+    "gold_rows": 7,
+    "pred_rows": 7,
+    "matched_rows": 7,
+    "row_recall": 1.0,
+    "row_precision": 1.0,
+    "field_accuracy": 0.9765,
+    "total_fields": 85,
+    "correct_fields": 83,
+    "details": [
+      {
+        "key": "一回路压力|MPa|DOC_A_RCS_SG_overview.md",
+        "row_accuracy": 0.8824,
+        "diffs": [
+          "alarms[高高].value: 期望 16.5 / 实际 None",
+          "alarms[高高].action: 期望 '稳压器安全阀动作' / 实际 None"
+        ]
+      },
+      {
+        "key": "一回路压力|MPa|DOC_B_SGTR_procedure.md",
+        "row_accuracy": 1.0,
+        "diffs": []
+      },
+      {
+        "key": "一回路设计压力|MPa|DOC_A_RCS_SG_overview.md",
+        "row_accuracy": 1.0,
+        "diffs": []
+      },
+      {
+        "key": "单环路冷却剂流量|m³/h|DOC_A_RCS_SG_overview.md",
+        "row_accuracy": 1.0,
+        "diffs": []
+      },
+      {
+        "key": "堆芯入口温度|℃|DOC_A_RCS_SG_overview.md",
+        "row_accuracy": 1.0,
+        "diffs": []
+      },
+      {
+        "key": "堆芯出口温度|℃|DOC_A_RCS_SG_overview.md",
+        "row_accuracy": 1.0,
+        "diffs": []
+      },
+      {
+        "key": "蒸汽发生器液位|%NR|DOC_A_RCS_SG_overview.md",
+        "row_accuracy": 1.0,
+        "diffs": []
+      }
+    ]
+  },
+  "targets": {
+    "三元组准确率 >= 0.85": {
+      "value": 0.9767,
+      "pass": true
+    },
+    "三元组召回率 >= 0.75": {
+      "value": 0.913,
+      "pass": true
+    },
+    "定表字段准确率 >= 0.95": {
+      "value": 0.9765,
+      "pass": true
+    },
+    "定表行召回率 >= 0.90": {
+      "value": 1.0,
+      "pass": true
+    }
+  },
+  "all_pass": true
+}

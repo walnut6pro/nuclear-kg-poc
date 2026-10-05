@@ -1,0 +1,698 @@
+{
+  "triple": {
+    "DOC_A_RCS_SG_overview::C003": [
+      {
+        "subject": "反应堆冷却剂系统",
+        "subject_type": "System",
+        "predicate": "HAS_FUNCTION",
+        "object": "把堆芯产生的热量传递给蒸汽发生器二次侧",
+        "object_type": "Action",
+        "evidence": "RCS 的主要功能是在功率运行工况下把堆芯产生的热量传递给蒸汽发生器（SG）二次侧",
+        "confidence": "high"
+      },
+      {
+        "subject": "反应堆冷却剂系统",
+        "subject_type": "System",
+        "predicate": "HAS_FUNCTION",
+        "object": "维持堆芯冷却",
+        "object_type": "Action",
+        "evidence": "RCS 的主要功能是在功率运行工况下把堆芯产生的热量传递给蒸汽发生器（SG）二次侧，并在正常和事故工况下维持堆芯冷却。",
+        "confidence": "high"
+      },
+      {
+        "subject": "蒸汽发生器",
+        "subject_type": "Equipment",
+        "predicate": "PART_OF",
+        "object": "反应堆冷却剂系统",
+        "object_type": "System",
+        "evidence": "RCS 的主要设备包括反应堆压力容器、蒸汽发生器、反应堆冷却剂泵（以下简称主泵）和稳压器。",
+        "confidence": "high"
+      },
+      {
+        "subject": "主泵",
+        "subject_type": "Equipment",
+        "predicate": "PART_OF",
+        "object": "反应堆冷却剂系统",
+        "object_type": "System",
+        "evidence": "RCS 的主要设备包括反应堆压力容器、蒸汽发生器、反应堆冷却剂泵（以下简称主泵）和稳压器。",
+        "confidence": "high"
+      },
+      {
+        "subject": "稳压器",
+        "subject_type": "Equipment",
+        "predicate": "PART_OF",
+        "object": "反应堆冷却剂系统",
+        "object_type": "System",
+        "evidence": "RCS 的主要设备包括反应堆压力容器、蒸汽发生器、反应堆冷却剂泵（以下简称主泵）和稳压器。",
+        "confidence": "high"
+      },
+      {
+        "subject": "反应堆压力容器",
+        "subject_type": "Equipment",
+        "predicate": "PART_OF",
+        "object": "反应堆冷却剂系统",
+        "object_type": "System",
+        "evidence": "RCS 的主要设备包括反应堆压力容器、蒸汽发生器、反应堆冷却剂泵（以下简称主泵）和稳压器。",
+        "confidence": "high"
+      },
+      {
+        "subject": "稳压器",
+        "subject_type": "Equipment",
+        "predicate": "HAS_FUNCTION",
+        "object": "维持一回路压力",
+        "object_type": "Action",
+        "evidence": "稳压器的功能是维持一回路压力。",
+        "confidence": "high"
+      },
+      {
+        "subject": "蒸汽发生器",
+        "subject_type": "Equipment",
+        "predicate": "PART_OF",
+        "object": "反应堆冷却剂系统",
+        "object_type": "System",
+        "evidence": "RCS 的主要设备包括反应堆压力容器、蒸汽发生器、反应堆冷却剂泵（以下简称主泵）和稳压器。",
+        "confidence": "high"
+      },
+      {
+        "subject": "主泵",
+        "subject_type": "Equipment",
+        "predicate": "HAS_FUNCTION",
+        "object": "维持一回路压力",
+        "object_type": "Action",
+        "evidence": "RCS 的主要设备包括反应堆压力容器、蒸汽发生器、反应堆冷却剂泵（以下简称主泵）和稳压器。",
+        "confidence": "low"
+      }
+    ],
+    "DOC_A_RCS_SG_overview::C004": [
+      {
+        "subject": "一回路压力",
+        "subject_type": "Parameter",
+        "predicate": "MONITORS",
+        "object": "反应堆冷却剂系统",
+        "object_type": "System",
+        "evidence": "在功率运行工况下，一回路压力由稳压器维持在 15.2~15.7 MPa 范围内",
+        "confidence": "medium"
+      },
+      {
+        "subject": "一回路压力",
+        "subject_type": "Parameter",
+        "predicate": "HAS_SETPOINT",
+        "object": "设计压力17.23MPa",
+        "object_type": "Setpoint",
+        "evidence": "一回路设计压力为 17.23 MPa。",
+        "confidence": "high"
+      }
+    ],
+    "DOC_A_RCS_SG_overview::C005": [
+      {
+        "subject": "堆芯出口温度",
+        "subject_type": "Parameter",
+        "predicate": "MONITORS",
+        "object": "反应堆冷却剂系统",
+        "object_type": "System",
+        "evidence": "堆芯出口冷却剂平均温度约为 310 ℃，堆芯入口约为 290 ℃。",
+        "confidence": "low"
+      }
+    ],
+    "DOC_A_RCS_SG_overview::C007": [
+      {
+        "subject": "辅助给水泵A",
+        "subject_type": "Equipment",
+        "predicate": "REDUNDANT_WITH",
+        "object": "辅助给水泵B",
+        "object_type": "Equipment",
+        "evidence": "辅助给水系统（ASG）配置两台辅助给水泵，A 泵与 B 泵互为冗余",
+        "confidence": "high"
+      },
+      {
+        "subject": "辅助给水系统",
+        "subject_type": "System",
+        "predicate": "HAS_FUNCTION",
+        "object": "满足事故工况下的给水需求",
+        "object_type": "Action",
+        "evidence": "辅助给水系统（ASG）配置两台辅助给水泵，A 泵与 B 泵互为冗余，任一台均可单独满足事故工况下的给水需求。",
+        "confidence": "high"
+      },
+      {
+        "subject": "蒸汽发生器",
+        "subject_type": "Equipment",
+        "predicate": "PART_OF",
+        "object": "反应堆冷却剂系统",
+        "object_type": "System",
+        "evidence": "RCS 的主要设备包括反应堆压力容器、蒸汽发生器、反应堆冷却剂泵（以下简称主泵）和稳压器。",
+        "confidence": "high"
+      }
+    ],
+    "DOC_A_RCS_SG_overview::C008": [
+      {
+        "subject": "蒸汽发生器",
+        "subject_type": "Equipment",
+        "predicate": "LOCATED_IN",
+        "object": "安全壳",
+        "object_type": "System",
+        "evidence": "蒸汽发生器（SG）是连接一回路与二回路的换热设备，安装在安全壳内。",
+        "confidence": "high"
+      },
+      {
+        "subject": "传热管束",
+        "subject_type": "Component",
+        "predicate": "PART_OF",
+        "object": "蒸汽发生器",
+        "object_type": "Equipment",
+        "evidence": "SG 的主要部件包括传热管束、管板、汽水分离器和下封头。",
+        "confidence": "high"
+      },
+      {
+        "subject": "管板",
+        "subject_type": "Component",
+        "predicate": "PART_OF",
+        "object": "蒸汽发生器",
+        "object_type": "Equipment",
+        "evidence": "SG 的主要部件包括传热管束、管板、汽水分离器和下封头。",
+        "confidence": "high"
+      },
+      {
+        "subject": "汽水分离器",
+        "subject_type": "Component",
+        "predicate": "PART_OF",
+        "object": "蒸汽发生器",
+        "object_type": "Equipment",
+        "evidence": "SG 的主要部件包括传热管束、管板、汽水分离器和下封头。",
+        "confidence": "high"
+      },
+      {
+        "subject": "蒸汽发生器",
+        "subject_type": "Equipment",
+        "predicate": "HAS_FUNCTION",
+        "object": "产生饱和蒸汽",
+        "object_type": "Action",
+        "evidence": "SG 的功能是把一回路冷却剂携带的热量传给二回路给水，使其产生饱和蒸汽",
+        "confidence": "high"
+      },
+      {
+        "subject": "传热管束",
+        "subject_type": "Component",
+        "predicate": "PART_OF",
+        "object": "一回路承压边界",
+        "object_type": "Component",
+        "evidence": "其中传热管束是一回路承压边界的组成部分",
+        "confidence": "high"
+      }
+    ],
+    "DOC_A_RCS_SG_overview::C009": [
+      {
+        "subject": "蒸汽发生器传热管破裂",
+        "subject_type": "FaultMode",
+        "predicate": "HAS_SYMPTOM",
+        "object": "二回路放射性水平异常升高",
+        "object_type": "FaultMode",
+        "evidence": "蒸汽发生器传热管破裂（SGTR）的典型征兆包括：二回路放射性水平异常升高、SG 液位快速上升、一回路压力下降、稳压器液位降低。",
+        "confidence": "high"
+      },
+      {
+        "subject": "蒸汽发生器传热管破裂",
+        "subject_type": "FaultMode",
+        "predicate": "HAS_SYMPTOM",
+        "object": "SG液位快速上升",
+        "object_type": "FaultMode",
+        "evidence": "蒸汽发生器传热管破裂（SGTR）的典型征兆包括：二回路放射性水平异常升高、SG 液位快速上升、一回路压力下降、稳压器液位降低。",
+        "confidence": "high"
+      },
+      {
+        "subject": "蒸汽发生器传热管破裂",
+        "subject_type": "FaultMode",
+        "predicate": "HAS_SYMPTOM",
+        "object": "一回路压力下降",
+        "object_type": "FaultMode",
+        "evidence": "蒸汽发生器传热管破裂（SGTR）的典型征兆包括：二回路放射性水平异常升高、SG 液位快速上升、一回路压力下降、稳压器液位降低。",
+        "confidence": "high"
+      },
+      {
+        "subject": "蒸汽发生器传热管破裂",
+        "subject_type": "FaultMode",
+        "predicate": "HAS_SYMPTOM",
+        "object": "稳压器液位降低",
+        "object_type": "FaultMode",
+        "evidence": "蒸汽发生器传热管破裂（SGTR）的典型征兆包括：二回路放射性水平异常升高、SG 液位快速上升、一回路压力下降、稳压器液位降低。",
+        "confidence": "high"
+      },
+      {
+        "subject": "蒸汽发生器传热管破裂",
+        "subject_type": "FaultMode",
+        "predicate": "OCCURS_IN",
+        "object": "蒸汽发生器",
+        "object_type": "Equipment",
+        "evidence": "蒸汽发生器传热管破裂（SGTR）的典型征兆包括：二回路放射性水平异常升高、SG 液位快速上升、一回路压力下降、稳压器液位降低。",
+        "confidence": "medium"
+      }
+    ],
+    "DOC_A_RCS_SG_overview::C010": [
+      {
+        "subject": "蒸汽发生器传热管破裂",
+        "subject_type": "FaultMode",
+        "predicate": "CAUSED_BY",
+        "object": "应力腐蚀裂纹",
+        "object_type": "FaultMode",
+        "evidence": "传热管破裂的主要原因包括应力腐蚀裂纹、磨损减薄和制造缺陷",
+        "confidence": "high"
+      },
+      {
+        "subject": "蒸汽发生器传热管破裂",
+        "subject_type": "FaultMode",
+        "predicate": "CAUSED_BY",
+        "object": "制造缺陷",
+        "object_type": "FaultMode",
+        "evidence": "传热管破裂的主要原因包括应力腐蚀裂纹、磨损减薄和制造缺陷",
+        "confidence": "high"
+      }
+    ],
+    "DOC_A_RCS_SG_overview::C011": [
+      {
+        "subject": "蒸汽发生器传热管破裂",
+        "subject_type": "FaultMode",
+        "predicate": "HAS_CONSEQUENCE",
+        "object": "一回路冷却剂向二回路泄漏",
+        "object_type": "FaultMode",
+        "evidence": "传热管破裂会造成一回路冷却剂持续向二回路泄漏，导致放射性向二回路释放。",
+        "confidence": "high"
+      },
+      {
+        "subject": "蒸汽发生器传热管破裂",
+        "subject_type": "FaultMode",
+        "predicate": "HAS_CONSEQUENCE",
+        "object": "放射性释放",
+        "object_type": "Event",
+        "evidence": "传热管破裂会造成一回路冷却剂持续向二回路泄漏，导致放射性向二回路释放。泄漏严重时，放射性可通过蒸汽发生器二次侧安全阀或大气释放阀向环境释放，构成放射性释放后果。",
+        "confidence": "high"
+      }
+    ],
+    "DOC_A_RCS_SG_overview::C012": [
+      {
+        "subject": "蒸汽发生器传热管破裂",
+        "subject_type": "FaultMode",
+        "predicate": "MITIGATED_BY",
+        "object": "隔离故障蒸汽发生器",
+        "object_type": "Action",
+        "evidence": "传热管破裂的处置原则是尽快隔离故障蒸汽发生器并终止泄漏。",
+        "confidence": "high"
+      }
+    ],
+    "DOC_A_RCS_SG_overview::C015": [
+      {
+        "subject": "压力高定值16.2MPa",
+        "subject_type": "Setpoint",
+        "predicate": "TRIGGERS",
+        "object": "报警信号",
+        "object_type": "Event",
+        "evidence": "一回路压力超过压力高定值 16.2 MPa 时触发报警信号",
+        "confidence": "high"
+      },
+      {
+        "subject": "压力高高定值16.5MPa",
+        "subject_type": "Setpoint",
+        "predicate": "TRIGGERS",
+        "object": "稳压器安全阀动作",
+        "object_type": "Action",
+        "evidence": "超过压力高高定值 16.5 MPa 时稳压器安全阀动作排放蒸汽。",
+        "confidence": "high"
+      }
+    ],
+    "DOC_A_RCS_SG_overview::C018": [
+      {
+        "subject": "液位低低定值",
+        "subject_type": "Setpoint",
+        "predicate": "TRIGGERS",
+        "object": "紧急停堆",
+        "object_type": "Action",
+        "evidence": "蒸汽发生器液位低于液位低低定值时，将触发紧急停堆信号并同时启动辅助给水系统。",
+        "confidence": "high"
+      },
+      {
+        "subject": "液位低低定值",
+        "subject_type": "Setpoint",
+        "predicate": "TRIGGERS",
+        "object": "投入辅助给水",
+        "object_type": "Action",
+        "evidence": "蒸汽发生器液位低于液位低低定值时，将触发紧急停堆信号并同时启动辅助给水系统。",
+        "confidence": "high"
+      }
+    ],
+    "DOC_B_SGTR_procedure::C003": [
+      {
+        "subject": "SGTR处置导则",
+        "subject_type": "Procedure",
+        "predicate": "APPLIES_TO",
+        "object": "功率运行",
+        "object_type": "PlantMode",
+        "evidence": "本导则适用于功率运行工况下蒸汽发生器传热管破裂（SGTR）的判别与处置。",
+        "confidence": "high"
+      },
+      {
+        "subject": "SGTR处置导则",
+        "subject_type": "Procedure",
+        "predicate": "APPLIES_TO",
+        "object": "蒸汽发生器",
+        "object_type": "Equipment",
+        "evidence": "本导则适用于蒸汽发生器和相关的给水、蒸汽系统。",
+        "confidence": "high"
+      }
+    ],
+    "DOC_B_SGTR_procedure::C005": [
+      {
+        "subject": "隔离故障蒸汽发生器的主蒸汽管线",
+        "subject_type": "Action",
+        "predicate": "STEP_OF",
+        "object": "SGTR处置导则",
+        "object_type": "Procedure",
+        "evidence": "步骤 1 的操作内容包括：隔离故障蒸汽发生器的主蒸汽管线，关闭主蒸汽隔离阀，隔离故障蒸汽发生器的辅助给水管线，停止向该蒸汽发生器供水。",
+        "confidence": "high"
+      },
+      {
+        "subject": "隔离故障蒸汽发生器的辅助给水管线",
+        "subject_type": "Action",
+        "predicate": "STEP_OF",
+        "object": "SGTR处置导则",
+        "object_type": "Procedure",
+        "evidence": "步骤 1 的操作内容包括：隔离故障蒸汽发生器的主蒸汽管线，关闭主蒸汽隔离阀，隔离故障蒸汽发生器的辅助给水管线，停止向该蒸汽发生器供水。",
+        "confidence": "high"
+      },
+      {
+        "subject": "完成故障蒸汽发生器隔离",
+        "subject_type": "Action",
+        "predicate": "PRECONDITION_OF",
+        "object": "一回路降温降压",
+        "object_type": "Action",
+        "evidence": "隔离完成前，禁止对一回路进行降压操作。",
+        "confidence": "medium"
+      }
+    ],
+    "DOC_B_SGTR_procedure::C006": [
+      {
+        "subject": "投入稳压器喷淋阀",
+        "subject_type": "Action",
+        "predicate": "STEP_OF",
+        "object": "SGTR处置导则",
+        "object_type": "Procedure",
+        "evidence": "步骤 2 的操作内容包括：投入稳压器喷淋阀使一回路降温降压",
+        "confidence": "high"
+      },
+      {
+        "subject": "一回路压力高于故障蒸汽发生器二次侧压力",
+        "subject_type": "PlantMode",
+        "predicate": "PRECONDITION_OF",
+        "object": "投入稳压器喷淋阀",
+        "object_type": "Action",
+        "evidence": "投入稳压器喷淋阀的前提条件是一回路压力高于故障蒸汽发生器二次侧压力。",
+        "confidence": "high"
+      }
+    ],
+    "DOC_B_SGTR_procedure::C007": [
+      {
+        "subject": "一、二回路压差小于0.5MPa",
+        "subject_type": "PlantMode",
+        "predicate": "PRECONDITION_OF",
+        "object": "终止泄漏",
+        "object_type": "Action",
+        "evidence": "终止泄漏的必要条件是一、二回路压差小于 0.5 MPa。",
+        "confidence": "high"
+      },
+      {
+        "subject": "停止上充泵补水",
+        "subject_type": "Action",
+        "predicate": "STEP_OF",
+        "object": "SGTR处置导则",
+        "object_type": "Procedure",
+        "evidence": "步骤 3 的操作内容包括：稳定一回路压力使其略高于故障蒸汽发生器二次侧压力，停止上充泵补水，最终实现一、二回路压力平衡，终止泄漏。",
+        "confidence": "medium"
+      }
+    ],
+    "DOC_B_SGTR_procedure::C008": [
+      {
+        "subject": "一回路温度低于180℃",
+        "subject_type": "PlantMode",
+        "predicate": "PRECONDITION_OF",
+        "object": "投入余热排出系统（RHR）",
+        "object_type": "Action",
+        "evidence": "当一回路温度低于 180 ℃、一回路压力低于 3.0 MPa 时，方可投入余热排出系统（RHR）。",
+        "confidence": "high"
+      },
+      {
+        "subject": "一回路压力低于3.0MPa",
+        "subject_type": "PlantMode",
+        "predicate": "PRECONDITION_OF",
+        "object": "投入余热排出系统（RHR）",
+        "object_type": "Action",
+        "evidence": "当一回路温度低于 180 ℃、一回路压力低于 3.0 MPa 时，方可投入余热排出系统（RHR）。",
+        "confidence": "high"
+      },
+      {
+        "subject": "投入余热排出系统（RHR）",
+        "subject_type": "Action",
+        "predicate": "STEP_OF",
+        "object": "SGTR处置导则",
+        "object_type": "Procedure",
+        "evidence": "步骤 4 的操作内容为：当一回路温度低于 180 ℃、一回路压力低于 3.0 MPa 时，方可投入余热排出系统（RHR）。",
+        "confidence": "high"
+      }
+    ]
+  },
+  "setpoint": {
+    "DOC_A_RCS_SG_overview::C006": [
+      {
+        "param_id": "RCS-PT-002",
+        "param_name": "一回路设计压力",
+        "param_name_en": "RCS Design Pressure",
+        "system": "反应堆冷却剂系统",
+        "equipment": null,
+        "unit": "MPa",
+        "normal_range": {
+          "min": null,
+          "max": 17.23
+        },
+        "alarms": [],
+        "applicable_mode": null,
+        "source": {
+          "doc": "DOC_A_RCS_SG_overview.md",
+          "page": null,
+          "section": "第三章 反应堆冷却剂系统 > 3.2 主要参数",
+          "evidence": "| 一回路设计压力 | 17.23 | MPa |"
+        },
+        "version": "v1.0",
+        "confidence": 1.0
+      },
+      {
+        "param_id": "RCS-TE-001",
+        "param_name": "堆芯出口温度",
+        "param_name_en": "Core Outlet Temperature",
+        "system": "反应堆冷却剂系统",
+        "equipment": "反应堆压力容器",
+        "unit": "℃",
+        "normal_range": {
+          "min": null,
+          "max": 310
+        },
+        "alarms": [],
+        "applicable_mode": null,
+        "source": {
+          "doc": "DOC_A_RCS_SG_overview.md",
+          "page": null,
+          "section": "第三章 反应堆冷却剂系统 > 3.2 主要参数",
+          "evidence": "| 堆芯出口温度 | 310 | ℃ |"
+        },
+        "version": "v1.0",
+        "confidence": 1.0
+      },
+      {
+        "param_id": "RCS-TE-002",
+        "param_name": "堆芯入口温度",
+        "param_name_en": "Core Inlet Temperature",
+        "system": "反应堆冷却剂系统",
+        "equipment": "反应堆压力容器",
+        "unit": "℃",
+        "normal_range": {
+          "min": null,
+          "max": 290
+        },
+        "alarms": [],
+        "applicable_mode": null,
+        "source": {
+          "doc": "DOC_A_RCS_SG_overview.md",
+          "page": null,
+          "section": "第三章 反应堆冷却剂系统 > 3.2 主要参数",
+          "evidence": "| 堆芯入口温度 | 290 | ℃ |"
+        },
+        "version": "v1.0",
+        "confidence": 1.0
+      },
+      {
+        "param_id": "RCS-FT-001",
+        "param_name": "单环路冷却剂流量",
+        "param_name_en": "Loop Flow Rate",
+        "system": "反应堆冷却剂系统",
+        "equipment": "主泵",
+        "unit": "m³/h",
+        "normal_range": {
+          "min": null,
+          "max": 24000
+        },
+        "alarms": [],
+        "applicable_mode": null,
+        "source": {
+          "doc": "DOC_A_RCS_SG_overview.md",
+          "page": null,
+          "section": "第三章 反应堆冷却剂系统 > 3.2 主要参数",
+          "evidence": "| 单环路冷却剂流量 | 约 24000 | m³/h |"
+        },
+        "version": "v1.0",
+        "confidence": 1.0
+      },
+      {
+        "param_id": "RCS-PT-001",
+        "param_name": "一回路压力",
+        "param_name_en": "RCS Pressure",
+        "system": "反应堆冷却剂系统",
+        "equipment": "稳压器",
+        "unit": "MPa",
+        "normal_range": {
+          "min": 15.2,
+          "max": 15.7
+        },
+        "alarms": [],
+        "applicable_mode": "功率运行",
+        "source": {
+          "doc": "DOC_A_RCS_SG_overview.md",
+          "page": null,
+          "section": "第三章 反应堆冷却剂系统 > 3.2 主要参数",
+          "evidence": "| 一回路运行压力正常范围 | 15.2~15.7 | MPa |"
+        },
+        "version": "v1.0",
+        "confidence": 0.95
+      }
+    ],
+    "DOC_A_RCS_SG_overview::C014": [
+      {
+        "param_id": "RCS-PT-001",
+        "param_name": "一回路压力",
+        "param_name_en": "RCS Pressure",
+        "system": "反应堆冷却剂系统",
+        "equipment": "稳压器",
+        "unit": "MPa",
+        "normal_range": {
+          "min": 15.2,
+          "max": 15.7
+        },
+        "alarms": [
+          {
+            "level": "低低",
+            "value": 13.9,
+            "action": "触发紧急停堆"
+          },
+          {
+            "level": "低",
+            "value": 14.5,
+            "action": "报警"
+          },
+          {
+            "level": "高",
+            "value": 16.2,
+            "action": "报警"
+          },
+          {
+            "level": "高高",
+            "value": 165,
+            "action": "稳压器安全阀动作"
+          }
+        ],
+        "applicable_mode": "功率运行",
+        "source": {
+          "doc": "DOC_A_RCS_SG_overview.md",
+          "page": null,
+          "section": "第五章 主要参数定值 > 5.1 一回路压力定值",
+          "evidence": "下表为一回路压力相关报警与保护定值，适用于功率运行工况："
+        },
+        "version": "v1.0",
+        "confidence": 0.72
+      }
+    ],
+    "DOC_A_RCS_SG_overview::C017": [
+      {
+        "param_id": "SG-LT-001",
+        "param_name": "蒸汽发生器液位",
+        "param_name_en": "SG Level (Narrow Range)",
+        "system": "蒸汽发生器",
+        "equipment": "蒸汽发生器",
+        "unit": "%NR",
+        "normal_range": null,
+        "alarms": [
+          {
+            "level": "低低",
+            "value": 0,
+            "action": "触发紧急停堆并启动辅助给水"
+          },
+          {
+            "level": "低",
+            "value": 25,
+            "action": "报警"
+          },
+          {
+            "level": "高",
+            "value": 75,
+            "action": "报警"
+          }
+        ],
+        "applicable_mode": "功率运行",
+        "source": {
+          "doc": "DOC_A_RCS_SG_overview.md",
+          "page": null,
+          "section": "第五章 主要参数定值 > 5.2 蒸汽发生器液位定值",
+          "evidence": "蒸汽发生器窄量程液位（%NR）的报警定值如下，适用于功率运行工况："
+        },
+        "version": "v1.0",
+        "confidence": 1.0
+      }
+    ],
+    "DOC_B_SGTR_procedure::C010": [
+      {
+        "param_id": "RCS-PT-001",
+        "param_name": "一回路压力",
+        "param_name_en": "RCS Pressure",
+        "system": "反应堆冷却剂系统",
+        "equipment": "稳压器",
+        "unit": "MPa",
+        "normal_range": null,
+        "alarms": [
+          {
+            "level": "低低",
+            "value": 13.9,
+            "action": "触发紧急停堆"
+          },
+          {
+            "level": "低",
+            "value": 14.5,
+            "action": "报警"
+          },
+          {
+            "level": "高",
+            "value": 16.2,
+            "action": "报警"
+          },
+          {
+            "level": "高高",
+            "value": 16.5,
+            "action": "稳压器安全阀动作"
+          }
+        ],
+        "applicable_mode": "功率运行",
+        "source": {
+          "doc": "DOC_B_SGTR_procedure.md",
+          "page": null,
+          "section": "4 关联参数与定值",
+          "evidence": "本导则涉及的一回路压力报警定值如下，适用于功率运行工况："
+        },
+        "version": "v1.0",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "nli": {}
+}
